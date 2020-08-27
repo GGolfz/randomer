@@ -98,14 +98,18 @@ export default {
       }
     },
     random(){
-      let i = 0;
-      var x = setInterval(()=>{
-        this.show = this.data[Math.floor(Math.random() *this.data.length)]
-        i +=1;
-        if(i >=30){
-          clearInterval(x);
-        }
-      },100)
+      if(this.data.length == 0 ){
+        alert("Please add data before using randomer")
+      } else{
+        let i = 0;
+        var x = setInterval(()=>{
+          this.show = this.data[Math.floor(Math.random() *this.data.length)]
+          i +=1;
+          if(i >=30){
+            clearInterval(x);
+          }
+        },100)
+      }
     },
     remove(id){
       this.data.splice(id,1);
